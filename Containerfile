@@ -8,6 +8,7 @@ LABEL com.github.containers.toolbox="true" \
 COPY ./extra-packages /extra-packages
 
 RUN apt-get update && \ 
+    apt-get remove -y ubuntu-pro-client ubuntu-pro-client-l10n ubuntu-advantage-tools && \
     apt-get upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install \
         $(cat extra-packages | xargs) && \
