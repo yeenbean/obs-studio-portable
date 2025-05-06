@@ -1,6 +1,3 @@
-# NOTE: THIS IMAGE IS DEPRECATED
-If you want to take over maintenance of this repository please file an issue and the team will transfer ownership to you 
-
 <h1 align="center">
   <img src="https://avatars1.githubusercontent.com/u/7725691?v=3&s=256" alt="OBS Studio">
   <br />
@@ -11,7 +8,7 @@ If you want to take over maintenance of this repository please file an issue and
 <br />
 Made with 💝 for 🐧</p>
 
-[![build-obs-studio-portable](https://github.com/ublue-os/obs-studio-portable/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/obs-studio-portable/actions/workflows/build.yml)
+[![build-obs-studio-portable](https://github.com/yeenbean/obs-studio-portable/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/obs-studio-portable/actions/workflows/build.yml)
 
 # OBS Studio Portable for Linux
 
@@ -50,8 +47,12 @@ Use [Distrobox](https://distrobox.it/) to run [OBS Studio Portable](https://gith
 2. Create a Distrobox container for OBS Studio Portable.
 
 ```bash
-distrobox create --image ghcr.io/ublue-os/obs-studio-portable:latest --name obs --pull
+distrobox create --image ghcr.io/yeenbean/obs-studio-portable:latest --name obs --pull
+distrobox enter obs
 ```
+
+After running both commands, the image will be available in BoxBuddy. You can
+create a shortcut with BoxBuddy to make it easier to launch OBS.
 
 ## NVIDIA support
 
@@ -66,7 +67,7 @@ Therefore, if your are running an older version of Distrobox or the NVIDIA drive
 Required if the display is rendered by an NVIDIA GPU.
 
 ```bash
-distrobox create --image ghcr.io/ublue-os/obs-studio-portable:latest --name obs --pull --additional-packages nvidia-driver-535
+distrobox create --image ghcr.io/yeenbean/obs-studio-portable:latest --name obs --pull --additional-packages nvidia-driver-535
 ```
 
 ### NVIDIA compute only
@@ -74,7 +75,8 @@ distrobox create --image ghcr.io/ublue-os/obs-studio-portable:latest --name obs 
 Suitable for multi-GPU systems where the NVIDIA GPU is not rendering the display and only being used for compute.
 
 ```bash
-distrobox create --image ghcr.io/ublue-os/obs-studio-portable:latest --name obs --pull --additional-packages libnvidia-encode-535 nvidia-headless-no-dkms-535
+distrobox create --image ghcr.io/yeenbean/obs-studio-portable:latest --name obs --pull --additional-packages libnvidia-encode-535 nvidia-headless-no-dkms-535
+```
 
 3. Run the initial setup.
 
@@ -92,7 +94,7 @@ If the OBS Studio Portable container cannot connect to the host X11 server, add 
 
 # More information
 
-This container image of OBS Studio Portable is maintained as a collaborative effort between [Universal Blue](https://github.com/ublue-os) and [Martin Wimpress](https://github.com/flexiondotorg), the maintainer of [OBS Studio Portable for Ubuntu](https://github.com/wimpysworld/obs-studio-portable).
+This container image of OBS Studio Portable was maintained as a collaborative effort between [Universal Blue](https://github.com/ublue-os) and [Martin Wimpress](https://github.com/flexiondotorg), the maintainer of [OBS Studio Portable for Ubuntu](https://github.com/wimpysworld/obs-studio-portable). This fork of the repository is maintained by [yeenbean](https://github.com/yeenbean) to continue to provide a working image.
 
 ## OBS Studio Portable Plugins
 
